@@ -1,0 +1,53 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <h3>Crear cuenta</h3>
+        <div class="formGroup">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Email Address"
+            #userEmail
+            required
+          />
+        </div>
+        <div class="form-Group">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            #userPwd
+            required
+          />
+        </div>
+        <br>
+        <div class="btn btn-primary">
+          <input
+            type="button"
+            class="btn btnPrimary"
+            value="Registrar"
+            (click)="authService.SignUp(userEmail.value, userPwd.value)"
+          />
+        </div>
+        
+        <!-- Continue with Google -->
+        <div class="btn btn-primary">
+          <button
+            type="button"
+            class="btn googleBtn"
+            (click)="authService.GoogleAuth()"
+          >
+            <i class="fab fa-google-plus-g"></i>
+            Continuar con google
+          </button>
+        </div>
+      </div>
+      <br>
+      <div class="btn btn-info">
+        <span
+          >Ya tienes una cuenta?
+          <span  class="redirect" routerLink="/sign-in">Iniciar sesión</span></span
+        >
+      </div>
+    </div>
+  </div>

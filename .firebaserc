@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "participacion-etica": {
+      "hosting": {
+        "participacion-etica": [
+          "participacion-etica"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "participacion-etica"
+  }
+}

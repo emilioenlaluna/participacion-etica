@@ -1,0 +1,50 @@
+<div class="container mt-5">
+    <p class="display-6">Participaciones</p>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="filterTerm" />
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Participaciones</th>
+                <th scope="col">Aumentar</th>
+                <th scope="col">Disminuir</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of data | filter: filterTerm">
+
+
+                
+                <td> {{ i.nombre }}</td>
+                <td> {{ i.participaciones }}</td>
+                <td><button class="btn btn-info" (click)="updateDataAumentar(i.id,i.participaciones)">Aumentar</button>
+                </td>
+                
+                <td><button class="btn btn-warning" (click)="updateDataDisminuir(i.id,i.participaciones)">Disminuir</button>
+                </td>
+                <td><button class="btn  btn-danger" (click)="deleteData(i.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr class="my-4">
+<p class="display-6">Agregar Estudiante</p>
+<form #participacionesForm="ngForm" (ngSubmit)="addData(participacionesForm.value)">
+
+    <input class="form-control md-6" type="text" id="nombre" name="nombre" ngModel placeholder="Nombre estudiante">
+    <br>
+    <input class="form-control" ngModel type="number" placeholder="Numero participaciones" id="participaciones"
+        name="participaciones">
+        <br>
+    <button class="btn btn-dark" type="submit">Guardar</button>
+    
+</form>
+<br>
+<a class="btn btn-danger" routerLink="/dashboard">Ir a cuenta...</a>
+
+

@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <p class="display-6">Participaciones</p>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="filterTerm" />
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Participaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of data | filter: filterTerm">
+
+
+                
+                <td> {{ i.nombre }}</td>
+                <td> {{ i.participaciones }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

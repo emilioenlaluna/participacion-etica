@@ -1,0 +1,25 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <h3>Iniciar Sesión Administrador</h3>
+        <div class="form-Group">
+          <input type="text" class="form-control" placeholder="Usuario" #userName required>
+        </div>
+        <br>
+        <div class="form-group">
+          <input  type="password" class="form-control" placeholder="Contraseña" #userPassword required>
+        </div>
+        <br>
+        <!-- Calling SignIn Api from AuthService -->
+        <div class="formGroup">
+          <input type="button" class="btn btn-info" value="Iniciar sesión" (click)="authService.SignIn(userName.value, userPassword.value)">
+        </div>
+        <br>
+        <div class="forgotPassword btn btn-danger">
+          <span routerLink="/forgot-password">Olvidaste la contraseña?</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
